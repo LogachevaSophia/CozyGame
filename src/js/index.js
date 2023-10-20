@@ -4,8 +4,8 @@ const context = canvas.getContext("2d");
 canvas.width = 1024;
 canvas.height = 576;
 
-// context.fillStyle = "red";
-// context.fillRect(0, 0, canvas.width, canvas.height);
+context.fillStyle = "red";
+context.fillRect(0, 0, canvas.width, canvas.height);
 
 class Sprite {
   constructor({ position, image }) {
@@ -68,9 +68,11 @@ function animation() {
 animation();
 
 window.addEventListener("keydown", (e) => {
+  // console.log(e.key)
   switch (e.key) {
     case "w":
       keys.w.pressed = true;
+      console.log("ww");
       break;
     case "a":
       keys.a.pressed = true;
