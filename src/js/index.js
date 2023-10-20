@@ -54,18 +54,22 @@ function animation() {
     playerImage.width / 4,
     playerImage.height
   );
-  if (keys.w.pressed) backGround.position.y+=3
-  else if (keys.s.pressed) backGround.position.y-=3
-  else if (keys.a.pressed) backGround.position.x+=3
-  else if (keys.d.pressed) backGround.position.x-=3
+  if (keys.w.pressed) backGround.position.y += 3;
+  else {
+    if (keys.s.pressed) backGround.position.y -= 3;
+    else {
+      if (keys.a.pressed) backGround.position.x += 3;
+      else if (keys.d.pressed) backGround.position.x -= 3;
+    }
+  }
 }
 animation();
 
-
-window.addEventListener('keydown', (e) => {
+window.addEventListener("keydown", (e) => {
   switch (e.key) {
     case "w":
       keys.w.pressed = true;
+      console.log("ww");
       break;
     case "a":
       keys.a.pressed = true;
@@ -78,19 +82,19 @@ window.addEventListener('keydown', (e) => {
       break;
   }
 });
-window.addEventListener('keyup', (e) => {
-    switch (e.key) {
-      case "w":
-        keys.w.pressed = false;
-        break;
-      case "a":
-        keys.a.pressed = false;
-        break;
-      case "s":
-        keys.s.pressed = false;
-        break;
-      case "d":
-        keys.d.pressed = false;
-        break;
-    }
-  });
+window.addEventListener("keyup", (e) => {
+  switch (e.key) {
+    case "w":
+      keys.w.pressed = false;
+      break;
+    case "a":
+      keys.a.pressed = false;
+      break;
+    case "s":
+      keys.s.pressed = false;
+      break;
+    case "d":
+      keys.d.pressed = false;
+      break;
+  }
+});
