@@ -59,7 +59,9 @@ function animation() {
     if (keys.s.pressed) backGround.position.y -= 3;
     else {
       if (keys.a.pressed) backGround.position.x += 3;
-      else if (keys.d.pressed) backGround.position.x -= 3;
+      else {
+        if (keys.d.pressed) backGround.position.x -= 3;
+      }
     }
   }
 }
@@ -69,7 +71,6 @@ window.addEventListener("keydown", (e) => {
   switch (e.key) {
     case "w":
       keys.w.pressed = true;
-      console.log("ww");
       break;
     case "a":
       keys.a.pressed = true;
